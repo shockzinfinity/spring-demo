@@ -1,0 +1,16 @@
+quartz:
+  job:
+    name: currentTimeJob # Job 이름
+  trigger:
+    name: currentTimeTrigger # Trigger 이름
+  cron:
+    expression: "0 0/1 * * * ?" # 매 1분마다 실행되는 Cron 표현식
+
+logging:
+  level:
+    com.example.demo.jobs.CurrentTimeJob: INFO # 로그 레벨 설정
+  file:
+    name: logs/application.log # 로그 파일 위치
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n" # 로그 출력 형식
+  file.max-size: 10MB # 로그 파일 최대 크기
